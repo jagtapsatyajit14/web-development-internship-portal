@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <style>
+        /* General Page Styling */
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header Section */
+header {
+    background: #333;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo and company name styling */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 85px;  /* Adjust logo size */
+    height: auto;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+/* Navigation styling */
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    gap: 10px;
+}
+
+/* Navbar Links */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+    color: #3498db;
+}
+
+/* Search Bar */
+.navbar-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#searchBar {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+}
+
+#searchBtn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#searchBtn:hover {
+    background-color: #2980b9;
+}
+
+/* Expanded Search Interface */
+.search-interface {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+#searchInput {
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+#searchResults {
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.close-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Main Content */
+main {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Service Section Styling */
+.service-section {
+    padding: 50px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.service-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Service Cards Container */
+.service-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+    width: 3480px;
+}
+
+/* Service Card Styling */
+.service-card {
+    background-color: #fff;
+    padding: 20px;
+    width: calc(33.33% - 20px); /* Ensure 3 items per row */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.service-card p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Service Icon */
+.service-icon {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+/* More Info Button */
+.service-info-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.service-info-btn:hover {
+    background-color: #218838;
+}
+
+/* Extra Information */
+.service-extra-info {
+    display: none;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.service-card .service-details:hover .service-extra-info {
+    display: block;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .service-card {
+        width: calc(50% - 20px); /* 2 items per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .service-card {
+        width: 100%; /* 1 item per row */
+    }
+
+    .service-cards-container {
+        gap: 20px;
+    }
+}
+
+/* Service Navigation (Previous / Next Buttons) */
+.service-navigation {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.service-nav-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.service-nav-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.social-media-links {
+    margin-top: 20px;
+}
+
+.social-media-links a {
+    text-decoration: none;
+    margin: 0 10px;
+    color: white;
+    font-size: 16px;
+}
+
+.social-media-links a:hover {
+    color: #007BFF;
+}
+
+.newsletter-form {
+    margin-top: 20px;
+}
+
+.newsletter-form input {
+    padding: 10px;
+    width: 200px;
+    margin-right: 10px;
+}
+
+.newsletter-form button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.newsletter-form button:hover {
+    background-color: #0056b3;
+}
+
+.back-to-top-btn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-to-top-btn:hover {
+    background-color: #0056b3;
+}
+
+
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <div class="container header-container">
+        <!-- Logo and Company Name -->
+        <div class="logo">
+            <img src="logo new.png" alt="NOVANECTAR SERVICES" class="logo-img">
+            <h1>NOVANECTAR SERVICES</h1>
+        </div>
+        <!-- Navigation Section -->
+        
+        <nav class="navbar">
+        
+        <ul class="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="navbar-search">
+            <input type="text" id="searchBar" placeholder="Search..." />
+            <button id="searchBtn">🔍</button>
+        </div>
+        </nav>
+
+<!-- Expanded Search Interface (Hidden by default) -->
+<div id="searchInterface" class="search-interface">
+<div class="search-container">
+    <button id="closeSearchBtn" class="close-btn">✖</button>
+    <input type="text" id="searchInput" placeholder="Search for services, portfolio, etc." />
+    <div id="searchResults"></div> <!-- Results will appear here -->
+</div>
+</div>
+
+
+</div>
+</header>
+
+      <!-- Service Section -->
+      <main>
+        <section class="service-section">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                
+                <div class="service-cards-container">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i> <!-- Example icon -->
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>We offer custom web development services to create responsive and user-friendly websites that meet your business needs.</p>
+                        <div class="service-details">
+                            <button class="service-info-btn">More Info</button>
+                            <div class="service-extra-info">
+                                <p>Our web development services include eCommerce integration, custom web applications, SEO optimization, and more. We focus on building fast, secure, and scalable websites tailored to your requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i> <!-- Example icon -->
+                        </div>
+                        <h3>Mobile App Development</h3>
+                        <p>We specialize in creating high-performance mobile applications for both Android and iOS, designed to enhance user engagement.</p>
+                        <div class="service-details">
+                            <button class="service-info-btn">More Info</button>
+                            <div class="service-extra-info">
+                                <p>Our app development process covers design, testing, deployment, and maintenance, with a focus on user experience and performance optimization.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i> <!-- Example icon -->
+                        </div>
+                        <h3>SEO Services</h3>
+                        <p>Improve your website's visibility with our SEO services, aimed at increasing organic traffic and ranking on search engines.</p>
+                        <div class="service-details">
+                            <button class="service-info-btn">More Info</button>
+                            <div class="service-extra-info">
+                                <p>We offer keyword research, on-page optimization, link building, and content strategies to ensure your website ranks well on search engines.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Navigation -->
+                <div class="service-navigation">
+                    <button class="service-nav-btn" onclick="previousService()">Previous</button>
+                    <button class="service-nav-btn" onclick="nextService()">Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <div class="footer-content">
+            <!-- Dynamic Year Display -->
+            <p>&copy; <span id="currentYear"></span> Your Company. All Rights Reserved.</p>
+    
+            <!-- Social Media Links -->
+            <div class="social-media-links">
+                <a href="https://www.facebook.com" target="_blank" class="social-icon">Facebook</a>
+                <a href="https://www.twitter.com" target="_blank" class="social-icon">Twitter</a>
+                <a href="https://www.instagram.com" target="_blank" class="social-icon">Instagram</a>
+            </div>
+    
+            <!-- Newsletter Subscription Form -->
+            <form id="newsletterForm" class="newsletter-form">
+                <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+    
+            <!-- Back to Top Button -->
+            <button id="backToTopBtn" class="back-to-top-btn">Back to Top</button>
+        </div>
+    </footer>
+
+    <script>
+       // JavaScript for toggling extra service information
+document.querySelectorAll('.service-info-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const extraInfo = button.nextElementSibling; // Get the next div which is the extra info
+        if (extraInfo.style.display === 'block') {
+            extraInfo.style.display = 'none';
+        } else {
+            extraInfo.style.display = 'block';
+        }
+    });
+});
+
+// Function to rotate services automatically (optional)
+let currentIndex = 0;
+const serviceCards = document.querySelectorAll('.service-card');
+const serviceContainer = document.getElementById('serviceCardsContainer');
+
+// Function to update the visible service
+function updateServices() {
+    // Hide all cards
+    serviceCards.forEach(card => card.style.display = 'none');
+
+    // Show the current service
+    serviceCards[currentIndex].style.display = 'block';
+
+    // Move to the next service for the next cycle
+    currentIndex = (currentIndex + 1) % serviceCards.length;
+}
+
+// Initialize the first service to be visible
+updateServices();
+
+// Set an interval to change the service every 3 seconds
+setInterval(updateServices, 3000); // Change services every 3 seconds
+
+// JavaScript for navigating between services (Previous / Next)
+function nextService() {
+    currentIndex = (currentIndex + 1) % serviceCards.length;
+    updateServices();
+}
+
+function previousService() {
+    currentIndex = (currentIndex - 1 + serviceCards.length) % serviceCards.length;
+    updateServices();
+}
+
+    </script>
+</body>
+</html>

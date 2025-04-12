@@ -1,0 +1,593 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and container styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    height: 100%; /* Ensure the body takes up full height */
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+}
+
+/* Header Section Styling */
+header {
+    background: #333;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo and company name styling */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 133px;  /* Adjust logo size */
+    height: auto;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+/* Navigation styling */
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    gap: 10px;
+}
+
+/* Navbar Links */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+    color: #3498db;
+}
+
+/* Search Bar */
+.navbar-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#searchBar {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+}
+
+#searchBtn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#searchBtn:hover {
+    background-color: #2980b9;
+}
+
+/* Expanded Search Interface */
+.search-interface {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+#searchInput {
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+#searchResults {
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.close-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background-image: url('background\ image.jpeg'); /* Add your background image here */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Creates a parallax effect on scroll */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Hero Text Styling */
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    border-radius: 10px;
+}
+
+/* Heading */
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Subheading */
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Button Styling */
+.hero .btn {
+    padding: 15px 30px;
+    background-color: #2d74bb; /* Fresh green color */
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #2d74bb; /* Light green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.hero .btn:active {
+    background-color: #2d74bb; /* Dark green when clicked */
+    transform: translateY(0); /* Reset the lift effect */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem; /* Smaller heading on mobile */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Smaller text on mobile */
+    }
+
+    .hero .btn {
+        font-size: 1rem;
+        padding: 12px 24px; /* Adjust button size on mobile */
+    }
+}
+
+/* Services Section */
+.services {
+    padding: 50px 0;
+    text-align: center;
+    background: #f4f4f4;
+}
+.container h2{
+    font-size: 35px;
+}
+
+.scrolling-container {
+    display: flex;
+    overflow: hidden;
+    gap: 20px;
+    width: 100%;
+    justify-content: center; /* Center the service cards */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
+
+.service-card {
+    min-width: 1000px; /* Minimum width for each card */
+    max-width: 1050px; /* Max width for each card */
+    background: #fff;
+    height: 600px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    flex-shrink: 0; /* Prevent cards from shrinking */
+    font-style: oblique;
+}
+
+.service-card img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .scrolling-container {
+        flex-direction: column; /* Stack service cards vertically */
+    }
+
+    .service-card {
+        min-width: 90%; /* Make cards wider on smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .service-card img {
+        height: auto; /* Adjust image height to maintain aspect ratio */
+    }
+}
+
+/* Portfolio Section */
+/* Portfolio Section */
+.portfolio {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.portfolio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Portfolio Container with Horizontal Scrolling */
+.portfolio-container {
+    display: flex; /* Flexbox to arrange items horizontally */
+    gap: 20px; /* Space between items */
+    overflow-x: hidden; /* Hide the horizontal scrollbar */
+    padding: 20px 0; /* Add padding around the container */
+    justify-content: flex-start; /* Align items to the left */
+    animation: scrollLeft 30s linear infinite; /* Animation to scroll left */
+}
+
+/* Each portfolio item styling */
+.portfolio-item {
+    flex-shrink: 0; /* Prevent shrinking */
+    width: 400px; /* Fixed width for each item */
+    height: 300px; /* Fixed height for images */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Image styling */
+.portfolio-item img {
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* Keyframe Animation for Scrolling Left */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0); /* Start at the initial position */
+    }
+    100% {
+        transform: translateX(-50%); /* Scroll left by 50% of the container width */
+    }
+}
+
+/* Media Queries for Smaller Devices */
+@media (max-width: 768px) {
+    .portfolio-container {
+        gap: 10px;
+    }
+
+    .portfolio-item {
+        width: 80%; /* Make the items larger on smaller screens */
+        height: 200px;
+    }
+}
+
+
+
+/* Contact Section */
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fa; /* Light background color */
+    color: #333; /* Dark text color for readability */
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 0;
+    background-color: #ffffff; /* White background for the contact section */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for better focus */
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 30px; /* Space above */
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50; /* Darker color for the heading */
+    font-weight: 600;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #7f8c8d; /* Slightly lighter color for the description */
+}
+
+/* Form Styling */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #34495e; /* Darker shade for labels */
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #bdc3c7; /* Light gray border for input fields */
+    border-radius: 4px;
+    background-color: #ecf0f1; /* Light gray background inside input fields */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.3s ease; /* Smooth transition effect */
+}
+
+/* Focus Effect for Input Fields */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #3498db; /* Blue border on focus */
+    background-color: #ffffff; /* White background on focus */
+    outline: none;
+}
+
+/* File Upload Input */
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    margin-top: 8px;
+    background-color: #ecf0f1;
+    transition: border-color 0.3s ease;
+}
+
+input[type="file"]:focus {
+    border-color: #3498db; /* Blue border on focus */
+}
+
+/* Submit Button Styling */
+.submit-btn {
+    background-color: #2d74bb; /* Fresh green color */
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth button effects */
+}
+
+.submit-btn:hover {
+    background-color: #2d74bb; /* Lighter green on hover */
+    transform: translateY(-2px); /* Slight hover lift effect */
+}
+
+.submit-btn:active {
+    background-color: #2d74bb; /* Darker green when button is clicked */
+    transform: translateY(0); /* Reset the lift effect when clicked */
+}
+
+/* Success and Error Messages */
+.response-message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.response-message.success {
+    background-color: #d4edda; /* Light green background for success */
+    color: #155724; /* Dark green text color */
+}
+
+.response-message.error {
+    background-color: #f8d7da; /* Light red background for error */
+    color: #721c24; /* Dark red text color */
+}
+
+
+
+@media (max-width: 768px) {
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.social-media-links {
+    margin-top: 20px;
+}
+
+.social-media-links a {
+    text-decoration: none;
+    margin: 0 10px;
+    color: white;
+    font-size: 16px;
+}
+
+.social-media-links a:hover {
+    color: #007BFF;
+}
+
+.newsletter-form {
+    margin-top: 20px;
+}
+
+.newsletter-form input {
+    padding: 10px;
+    width: 200px;
+    margin-right: 10px;
+}
+
+.newsletter-form button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.newsletter-form button:hover {
+    background-color: #0056b3;
+}
+
+.back-to-top-btn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-to-top-btn:hover {
+    background-color: #0056b3;
+}

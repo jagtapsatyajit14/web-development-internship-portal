@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Section */
+        /* Header Section Styling */
+header {
+    background: #333;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo and company name styling */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 85px;  /* Adjust logo size */
+    height: auto;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+/* Navigation styling */
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    gap: 10px;
+}
+
+/* Navbar Links */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+    color: #3498db;
+}
+
+/* Search Bar */
+.navbar-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#searchBar {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+}
+
+#searchBtn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#searchBtn:hover {
+    background-color: #2980b9;
+}
+
+/* Expanded Search Interface */
+.search-interface {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+#searchInput {
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+#searchResults {
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.close-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-btn:hover {
+    background-color: #c0392b;
+}
+
+        /* Portfolio Section Styling */
+        .portfolio-section {
+            padding: 50px 20px;
+            background-color: #ffffff;
+        }
+
+        .portfolio-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        /* Portfolio Cards Container */
+        .portfolio-cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        /* Portfolio Card Styling */
+        .portfolio-card {
+            background-color: #fff;
+            padding: 20px;
+            width: calc(33.33% - 20px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .portfolio-card h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .portfolio-card p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Portfolio Icon */
+        .portfolio-icon {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        /* View Project Button */
+        .portfolio-view-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .portfolio-view-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .portfolio-card {
+                width: calc(50% - 20px); /* 2 items per row */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-card {
+                width: 100%; /* 1 item per row */
+            }
+            .portfolio-cards-container {
+                gap: 20px;
+            }
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-content p {
+            margin: 10px 0;
+        }
+
+        .social-media-links {
+            margin-top: 20px;
+        }
+
+        .social-media-links a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: white;
+            font-size: 16px;
+        }
+
+        .social-media-links a:hover {
+            color: #007BFF;
+        }
+
+        .newsletter-form {
+            margin-top: 20px;
+        }
+
+        .newsletter-form input {
+            padding: 10px;
+            width: 200px;
+            margin-right: 10px;
+        }
+
+        .newsletter-form button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+ <!-- Header Section -->
+ <header>
+    <div class="container header-container">
+        <!-- Logo and Company Name -->
+        <div class="logo">
+            <img src="logo new.png" alt="NOVANECTAR SERVICES" class="logo-img">
+            <h1>NOVANECTAR SERVICES</h1>
+        </div>
+        <!-- Navigation Section -->
+        
+        <nav class="navbar">
+        
+        <ul class="navbar-links">
+            <li><a href="index.html   ">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="navbar-search">
+            <input type="text" id="searchBar" placeholder="Search..." />
+            <button id="searchBtn">🔍</button>
+        </div>
+        </nav>
+
+<!-- Expanded Search Interface (Hidden by default) -->
+<div id="searchInterface" class="search-interface">
+<div class="search-container">
+    <button id="closeSearchBtn" class="close-btn">✖</button>
+    <input type="text" id="searchInput" placeholder="Search for services, portfolio, etc." />
+    <div id="searchResults"></div> <!-- Results will appear here -->
+</div>
+</div>
+
+
+</div>
+</header>
+<!-- Portfolio Section -->
+<main>
+    <section class="portfolio-section">
+        <div class="container">
+            <h2 class="section-title">Our Portfolio</h2>
+            <div class="portfolio-cards-container">
+                <div class="portfolio-card">
+                    <div class="portfolio-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Project One</h3>
+                    <p>A custom web development project that enhances user experience.</p>
+                    <button class="portfolio-view-btn">View Project</button>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Project Two</h3>
+                    <p>A mobile app designed to engage users with its interactive features.</p>
+                    <button class="portfolio-view-btn">View Project</button>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Project Three</h3>
+                    <p>An SEO optimization project that improved website traffic significantly.</p>
+                    <button class="portfolio-view-btn">View Project</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <!-- Dynamic Year Display -->
+        <p>&copy; <span id="currentYear"></span> Your Company. All Rights Reserved.</p>
+
+        <!-- Social Media Links -->
+        <div class="social-media-links">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon">Facebook</a>
+            <a href="https://www.twitter.com" target="_blank" class="social-icon">Twitter</a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon">Instagram</a>
+        </div>
+
+        <!-- Newsletter Subscription Form -->
+        <form id="newsletterForm" class="newsletter-form">
+            <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<script>
+    // Set the current year dynamically
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

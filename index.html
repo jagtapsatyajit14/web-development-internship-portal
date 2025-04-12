@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master Web Technologies - Your IT Solutions Partner">
+    <title>Master Web Technologies</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <!-- Logo and Company Name -->
+            <div class="logo">
+                <img src="logo new.png" alt="NOVANECTAR SERVICES" class="logo-img">
+                <h1>NOVANECTAR SERVICES</h1>
+            </div>
+            <!-- Navigation Section -->
+            
+            <nav class="navbar">
+            
+            <ul class="navbar-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="navbar-search">
+                <input type="text" id="searchBar" placeholder="Search..." />
+                <button id="searchBtn">🔍</button>
+            </div>
+            </nav>
+
+<!-- Expanded Search Interface (Hidden by default) -->
+<div id="searchInterface" class="search-interface">
+    <div class="search-container">
+        <button id="closeSearchBtn" class="close-btn">✖</button>
+        <input type="text" id="searchInput" placeholder="Search for services, portfolio, etc." />
+        <div id="searchResults"></div> <!-- Results will appear here -->
+    </div>
+</div>
+
+
+</div>
+</header>
+
+
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Novanectar Services </h1>
+            <p>Your one-stop solution for innovative web development.</p>
+            <a href="#services" class="btn">Explore Our Services</a>
+        </div>
+    </section>
+
+   <!-- Services Section -->
+   <section id="services" class="services">
+    <div class="container">
+        <h2>Our Services</h2>
+        <div class="scrolling-container" id="serviceCardsContainer">
+            <div class="service-card">
+                <img src="Service 1.jpg" alt="Web Development">
+                <h3>Web Development</h3>
+                <p>Custom web development to build your online presence.</p>
+            </div>
+            <div class="service-card">
+                <img src="Service 2.webp" alt="App Development">
+                <h3>App Development</h3>
+                <p>Innovative mobile applications tailored to your needs.</p>
+            </div>
+            <div class="service-card">
+                <img src="Service 3.avif" alt="Cloud Solutions">
+                <h3>Cloud Solutions</h3>
+                <p>Secure and scalable cloud solutions for businesses.</p>
+            </div>
+            <div class="service-card">
+                <img src="Service 4.jpeg" alt="SEO Services">
+                <h3>SEO Services</h3>
+                <p>Optimizing your website to rank higher on search engines.</p>
+            </div>
+            <div class="service-card">
+                <img src="Service 5.jpg" alt="UI/UX Design">
+                <h3>UI/UX Design</h3>
+                <p>Creating user-friendly and intuitive designs for your projects.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Portfolio session-->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <h2>Our Portfolio</h2>
+        
+        <!-- Portfolio items container -->
+        <div class="portfolio-container">
+            <div class="portfolio-item">
+                <img src="Project 1.png" alt="Portfolio 1">
+            </div>
+            <div class="portfolio-item">
+                <img src="Project 2.jpg" alt="Portfolio 2">
+            </div>
+            <div class="portfolio-item">
+                <img src="Project 3.jpg" alt="Portfolio 3">
+            </div>
+            <div class="portfolio-item">
+                <img src="Project 4.jpg" alt="Portfolio 4">
+            </div>
+            <!-- Duplicate the portfolio items to create a continuous scroll effect -->
+            <div class="portfolio-item">
+                <img src="Project 1.png" alt="Portfolio 1">
+            </div>
+            <div class="portfolio-item">
+                <img src="Project 2.jpg" alt="Portfolio 2">
+            </div>
+            <div class="portfolio-item">
+                <img src="Project 3.jpg" alt="Portfolio 3">
+            </div>
+            <div class="portfolio-item">
+                <img src="Project 4.jpg" alt="Portfolio 4">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>We’d love to hear from you! Please fill out the form below.</p>
+
+        <!-- Contact Form -->
+        <form id="contactForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Your Email">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+            </div>
+
+            <!-- File Upload Field -->
+            <div class="form-group">
+                <label for="attachment">Attach a File</label>
+                <input type="file" id="attachment" name="attachment" accept="image/*, .pdf, .doc, .docx">
+            </div>
+
+            <!-- Google reCAPTCHA -->
+            <div class="g-recaptcha" data-sitekey="YOUR_GOOGLE_RECAPTCHA_SITE_KEY"></div>
+
+            <div class="form-group">
+                <button type="submit" id="submitButton" class="submit-btn">Send Message</button>
+            </div>
+        </form>
+
+        <!-- Success and Error Messages -->
+        <div id="responseMessage" class="response-message"></div>
+
+        
+
+    </div>
+</section>
+
+    
+<!--Footer section-->
+<footer>
+    <div class="footer-content">
+        <!-- Dynamic Year Display -->
+        <p>&copy; <span id="currentYear"></span> Your Company. All Rights Reserved.</p>
+
+        <!-- Social Media Links -->
+        <div class="social-media-links">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon">Facebook</a>
+            <a href="https://www.twitter.com" target="_blank" class="social-icon">Twitter</a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon">Instagram</a>
+        </div>
+
+        <!-- Newsletter Subscription Form -->
+        <form id="newsletterForm" class="newsletter-form">
+            <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+
+        <!-- Back to Top Button -->
+        <button id="backToTopBtn" class="back-to-top-btn">Back to Top</button>
+    </div>
+</footer>
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>

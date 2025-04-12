@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Section */
+        /* Header Section Styling */
+header {
+    background: #333;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo and company name styling */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 85px;  /* Adjust logo size */
+    height: auto;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+/* Navigation styling */
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    gap: 10px;
+}
+
+/* Navbar Links */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+    color: #3498db;
+}
+
+/* Search Bar */
+.navbar-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#searchBar {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+}
+
+#searchBtn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#searchBtn:hover {
+    background-color: #2980b9;
+}
+
+/* Expanded Search Interface */
+.search-interface {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+#searchInput {
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+#searchResults {
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.close-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-btn:hover {
+    background-color: #c0392b;
+}
+
+        /* Career Section Styling */
+.career-section {
+    padding: 50px 20px;
+    background-color: #ffffff;
+}
+
+.career-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.career-listings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.career-listing {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.career-listing h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.career-listing p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.career-listing ul {
+    font-size: 14px;
+    color: #555;
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+
+.career-listing ul li {
+    margin-bottom: 5px;
+}
+
+.career-listing .career-apply-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.career-listing .career-apply-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .career-listing {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .career-listings-container {
+        gap: 20px;
+    }
+}
+
+/* Modal Styling */
+.apply-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+.apply-modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 500px;
+    text-align: center;
+}
+
+.apply-modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.apply-modal-content label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.apply-modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.apply-modal-content button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.apply-modal-content button:hover {
+    background-color: #0056b3;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .apply-modal-content {
+        width: 90%;
+    }
+}
+
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-content p {
+            margin: 10px 0;
+        }
+
+        .social-media-links {
+            margin-top: 20px;
+        }
+
+        .social-media-links a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: white;
+            font-size: 16px;
+        }
+
+        .social-media-links a:hover {
+            color: #007BFF;
+        }
+
+        .newsletter-form {
+            margin-top: 20px;
+        }
+
+        .newsletter-form input {
+            padding: 10px;
+            width: 200px;
+            margin-right: 10px;
+        }
+
+        .newsletter-form button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+ <!-- Header Section -->
+ <header>
+    <div class="container header-container">
+        <!-- Logo and Company Name -->
+        <div class="logo">
+            <img src="logo new.png" alt="NOVANECTAR SERVICES" class="logo-img">
+            <h1>NOVANECTAR SERVICES</h1>
+        </div>
+        <!-- Navigation Section -->
+        
+        <nav class="navbar">
+        
+        <ul class="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="navbar-search">
+            <input type="text" id="searchBar" placeholder="Search..." />
+            <button id="searchBtn">🔍</button>
+        </div>
+        </nav>
+
+<!-- Expanded Search Interface (Hidden by default) -->
+<div id="searchInterface" class="search-interface">
+<div class="search-container">
+    <button id="closeSearchBtn" class="close-btn">✖</button>
+    <input type="text" id="searchInput" placeholder="Search for services, portfolio, etc." />
+    <div id="searchResults"></div> <!-- Results will appear here -->
+</div>
+</div>
+
+
+</div>
+</header>
+
+<!-- Career Section -->
+<!-- Career Section -->
+<main>
+    <section class="career-section">
+        <div class="container">
+            <h2 class="section-title">Join Our Team</h2>
+            <p>At Master Web Technologies, we are always looking for talented individuals who are passionate about technology and innovation. If you want to be part of a dynamic and forward-thinking company, take a look at our current job openings below.</p>
+
+            <div class="career-listings-container">
+                <!-- Job Listing 1 -->
+                <div class="career-listing">
+                    <h3>Front-End Developer</h3>
+                    <p>As a Front-End Developer, you'll be responsible for creating beautiful and responsive websites. The ideal candidate will have a strong understanding of HTML, CSS, JavaScript, and modern front-end frameworks.</p>
+                    <ul>
+                        <li><strong>Location:</strong> Remote / Hybrid</li>
+                        <li><strong>Experience:</strong> 2+ years</li>
+                        <li><strong>Salary:</strong> Competitive</li>
+                    </ul>
+                    <button class="career-apply-btn" onclick="openApplyForm('Front-End Developer')">Apply Now</button>
+                </div>
+
+                <!-- Job Listing 2 -->
+                <div class="career-listing">
+                    <h3>Back-End Developer</h3>
+                    <p>We are looking for a Back-End Developer who excels at building scalable, high-performance applications. You'll be working with cutting-edge technologies to enhance our client's experience.</p>
+                    <ul>
+                        <li><strong>Location:</strong> Remote / Hybrid</li>
+                        <li><strong>Experience:</strong> 3+ years</li>
+                        <li><strong>Salary:</strong> Competitive</li>
+                    </ul>
+                    <button class="career-apply-btn" onclick="openApplyForm('Back-End Developer')">Apply Now</button>
+                </div>
+
+                <!-- Job Listing 3 -->
+                <div class="career-listing">
+                    <h3>UI/UX Designer</h3>
+                    <p>If you have a creative mind and a passion for creating seamless user experiences, this is the role for you. We are looking for someone to design interfaces that are not only beautiful but also functional and user-friendly.</p>
+                    <ul>
+                        <li><strong>Location:</strong> Remote / Hybrid</li>
+                        <li><strong>Experience:</strong> 2+ years</li>
+                        <li><strong>Salary:</strong> Competitive</li>
+                    </ul>
+                    <button class="career-apply-btn" onclick="openApplyForm('UI/UX Designer')">Apply Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Modal Form for Application -->
+<div id="applyModal" class="apply-modal">
+    <div class="apply-modal-content">
+        <span class="close-btn" onclick="closeApplyForm()">✖</span>
+        <h2>Apply for <span id="jobTitle"></span></h2>
+        <form id="applyForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="resume">Upload Resume</label>
+            <input type="file" id="resume" name="resume" required>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <!-- Dynamic Year Display -->
+        <p>&copy; <span id="currentYear"></span> Your Company. All Rights Reserved.</p>
+
+        <!-- Social Media Links -->
+        <div class="social-media-links">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon">Facebook</a>
+            <a href="https://www.twitter.com" target="_blank" class="social-icon">Twitter</a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon">Instagram</a>
+        </div>
+
+        <!-- Newsletter Subscription Form -->
+        <form id="newsletterForm" class="newsletter-form">
+            <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<script>
+    // Set the current year dynamically
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Function to open the application form modal
+function openApplyForm(jobTitle) {
+    // Set the job title dynamically in the modal
+    document.getElementById('jobTitle').textContent = jobTitle;
+
+    // Show the modal
+    document.getElementById('applyModal').style.display = 'flex';
+}
+
+// Function to close the application form modal
+function closeApplyForm() {
+    // Hide the modal
+    document.getElementById('applyModal').style.display = 'none';
+}
+
+// Close the modal if clicked outside the modal content
+window.onclick = function(event) {
+    if (event.target === document.getElementById('applyModal')) {
+        closeApplyForm();
+    }
+}
+
+// Optional: Handle form submission (You can process the form submission via AJAX or simple alert for now)
+document.getElementById('applyForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent the default form submission
+    alert('Application submitted successfully!');
+    closeApplyForm(); // Close the modal after submission
+});
+
+</script>
+</body>
+</html>
